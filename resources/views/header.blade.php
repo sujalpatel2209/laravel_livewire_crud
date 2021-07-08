@@ -1,7 +1,8 @@
 <div class="navbar navbar-default header-highlight">
     <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">
-            {{--    Logo     --}}
+        <a class="navbar-brand" href="index.html"
+           style="font-size: 23px; text-align: center; color: whitesmoke; width: 100%;">
+            LiveWire
         </a>
         <ul class="nav navbar-nav visible-xs-block">
             <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a>

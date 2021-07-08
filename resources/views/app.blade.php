@@ -14,20 +14,21 @@
     <link href="{{ asset('assets/css/components.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/colors.css') }}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
-    @yield('css')
+    @livewireStyles
 </head>
 <body>
-@yield('header')
+@include('header')
 <div class="page-container">
     <!-- Page content -->
     <div class="page-content">
-        @yield('sidebar')
+        @include('sidebar')
 
-        @yield('main-content')
+        @include('main-content')
+
     </div>
 </div>
-@yield('script')
-
+@livewireScripts
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <!-- Core JS files -->
 <script type="text/javascript" src="{{ asset('assets/js/plugins/loaders/pace.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery.min.js') }}"></script>
@@ -53,5 +54,11 @@
 <script type="text/javascript" src="{{ asset('assets/js/core/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/plugins/ui/ripple.min.js') }}"></script>
+
+<script type="text/javascript" src="{{ asset('assets/js/pages/form_floating_labels.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/tags/tagsinput.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/tags/tokenfield.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>--}}
 </body>
 </html>
