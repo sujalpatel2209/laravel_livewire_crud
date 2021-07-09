@@ -17,13 +17,17 @@
     @livewireStyles
 </head>
 <body>
-@include('header')
+@livewire('header')
 <div class="page-container">
     <!-- Page content -->
     <div class="page-content">
-        @include('sidebar')
+        @livewire('sidebar')
 
-        @include('main-content')
+        <div class="content-wrapper">
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
 
     </div>
 </div>
@@ -55,10 +59,14 @@
 <script type="text/javascript" src="{{ asset('assets/js/pages/dashboard.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/plugins/ui/ripple.min.js') }}"></script>
 
-<script type="text/javascript" src="{{ asset('assets/js/pages/form_floating_labels.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/tags/tagsinput.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/tags/tokenfield.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js') }}"></script>
-{{--<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>--}}
+<script type="text/javascript"
+        src="{{ asset('assets/js/pages/form_floating_labels.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/js/plugins/forms/tags/tagsinput.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/js/plugins/forms/tags/tokenfield.min.js') }}"></script>
+<script type="text/javascript"
+        src="{{ asset('assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/plugins/forms/inputs/touchspin.min.js') }}"></script>
 </body>
 </html>

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\Dashboard;
+use App\Http\Livewire\UserAdd;
+use App\Http\Livewire\UserIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
-
-Route::get('dashboard', \App\Http\Livewire\Dashboard::class)->name('dashboard');
-Route::get('user', \App\Http\Livewire\UserIndex::class)->name('user');
-Route::get('add_user', function (){
-    return view('pages.add-user-page');
-})->name('add_user');
+Route::livewire('dashboard', 'dashboard')->name('dashboard');
+Route::livewire('user', 'user-index')->name('user');
+Route::livewire('user/add', 'user-add')->name('add_user');

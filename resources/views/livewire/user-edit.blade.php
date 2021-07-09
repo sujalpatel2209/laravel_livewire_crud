@@ -1,7 +1,3 @@
-@extends('layout')
-
-@section('content')
-
+<div>
     <h1>User Edit</h1>
-
-@stop
+</div>

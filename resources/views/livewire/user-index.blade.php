@@ -1,7 +1,4 @@
-@extends('app')
-
-@section('content')
-
+<div>
     <div class="panel panel-flat">
         <div class="panel-heading text-right">
             <a href="{{ route('add_user') }}" class="btn btn-primary">Add User</a>
@@ -9,66 +6,28 @@
         <table class="table datatable-basic">
             <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Name</th>
                 <th>Email</th>
-                <th>Phone</th>
+                <th>Created Time</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Marth</td>
-                <td><a href="#">Enright</a></td>
-                <td>Traffic Court Referee</td>
-                <td>22 Jun 1972</td>
-                <td>
-                    <span class="label label-primary">Edit</span>
-                    <span class="label label-danger">Delete</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Marth</td>
-                <td><a href="#">Enright</a></td>
-                <td>Traffic Court Referee</td>
-                <td>22 Jun 1972</td>
-                <td>
-                    <span class="label label-primary">Edit</span>
-                    <span class="label label-danger">Delete</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Marth</td>
-                <td><a href="#">Enright</a></td>
-                <td>Traffic Court Referee</td>
-                <td>22 Jun 1972</td>
-                <td>
-                    <span class="label label-primary">Edit</span>
-                    <span class="label label-danger">Delete</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Marth</td>
-                <td><a href="#">Enright</a></td>
-                <td>Traffic Court Referee</td>
-                <td>22 Jun 1972</td>
-                <td>
-                    <span class="label label-primary">Edit</span>
-                    <span class="label label-danger">Delete</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Marth</td>
-                <td><a href="#">Enright</a></td>
-                <td>Traffic Court Referee</td>
-                <td>22 Jun 1972</td>
-                <td>
-                    <span class="label label-primary">Edit</span>
-                    <span class="label label-danger">Delete</span>
-                </td>
-            </tr>
+            @forelse($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
+                    <td>
+                        <span class="label label-primary">Edit</span>
+                        <span class="label label-danger">Delete</span>
+                    </td>
+                </tr>
+            @empty
+                Record not Available.
+            @endforelse
             </tbody>
         </table>
     </div>
+</div>
 
-@stop
