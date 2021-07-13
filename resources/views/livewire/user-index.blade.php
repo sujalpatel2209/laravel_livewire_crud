@@ -9,25 +9,37 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Created Time</th>
-                <th></th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
             @forelse($users as $user)
-                <tr>
+                <tr class="stra">
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
                     <td>
-                        <span class="label label-primary">Edit</span>
-                        <span class="label label-danger">Delete</span>
+                        <span class="label label-primary cursor-pointer">Edit</span>
+                        <span class="label label-danger cursor-pointer"
+                              wire:click="delete({{$user->id}})">Delete</span>
                     </td>
                 </tr>
             @empty
-                Record not Available.
+                <td colspan="4" class="text-center">Record not Available.</td>
             @endforelse
             </tbody>
         </table>
     </div>
 </div>
+@push('scripts')
+
+    {{--<script type="text/javascript">
+        document.addEventListener('alertLoad', function () {
+            Livewire.emit('deletePost', id => {
+                alert(id);
+            })
+        });
+    </script>--}}
+
+@endpush
 

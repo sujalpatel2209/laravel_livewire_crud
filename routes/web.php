@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::livewire('dashboard', 'dashboard')->name('dashboard');
 Route::livewire('user', 'user-index')->name('user');
 Route::livewire('user/add', 'user-add')->name('add_user');
+Route::livewire('user/edit/{id}', 'user-edit')->name('edit_user');

@@ -1,3 +1,3 @@
 <div>
-    <h1>User Edit</h1>
+    <h1>{{ $user->id }}</h1>
 </div>
