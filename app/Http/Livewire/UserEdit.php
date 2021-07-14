@@ -12,7 +12,7 @@ class UserEdit extends Component
     public $user;
 
     protected $listeners = [
-        'editUser' => 'render'
+        'editUser'
     ];
 
     public function render()
@@ -23,6 +23,7 @@ class UserEdit extends Component
 
     public function editUser($id)
     {
+        dd($id);
         $this->userId = $id;
         return redirect()->route('edit_user', ['id' => $id]);
     }

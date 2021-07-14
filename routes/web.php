@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function (){
+    return redirect()->route('dashboard');
+});
+
 Route::livewire('dashboard', 'dashboard')->name('dashboard');
 Route::livewire('user', 'user-index')->name('user');
 Route::livewire('user/add', 'user-add')->name('add_user');

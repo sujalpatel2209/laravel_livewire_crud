@@ -9,10 +9,6 @@ class UserIndex extends Component
 {
     public $users;
 
-    /*protected $listeners = [
-        'deletePost'
-    ];*/
-
     public function render()
     {
         $this->users = User::orderBy('created_at','DESC')->get();
@@ -22,5 +18,10 @@ class UserIndex extends Component
     public function delete($id)
     {
         User::find($id)->delete();
+    }
+
+    public function editRecord($id)
+    {
+        $this->emit('editUser');
     }
 }

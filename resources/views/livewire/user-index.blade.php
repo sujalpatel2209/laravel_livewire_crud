@@ -1,4 +1,4 @@
-<div>
+
     <div class="panel panel-flat">
         <div class="panel-heading text-right">
             <a href="{{ route('add_user') }}" class="btn btn-primary">Add User</a>
@@ -19,7 +19,7 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ \Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
                     <td>
-                        <span class="label label-primary cursor-pointer">Edit</span>
+{{--                        <span class="label label-primary cursor-pointer" wire:click="editRecord({{$user->id}})">Edit</span>--}}
                         <span class="label label-danger cursor-pointer"
                               wire:click="delete({{$user->id}})">Delete</span>
                     </td>
@@ -30,16 +30,4 @@
             </tbody>
         </table>
     </div>
-</div>
-@push('scripts')
-
-    {{--<script type="text/javascript">
-        document.addEventListener('alertLoad', function () {
-            Livewire.emit('deletePost', id => {
-                alert(id);
-            })
-        });
-    </script>--}}
-
-@endpush
 
